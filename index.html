@@ -84,8 +84,12 @@
                         <input type="text" class="form-control w-75" id="customerSalary" placeholder="Salary">
                     </div>
                 </aside>
-                <aside class="col-12 row justify-content-end">
-                    <div class="col-6">
+                <aside class="col-12 row justify-content-center">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-warning text-white fw-bold">Search</button>
+                        <input type="text" class="form-control w-50 d-inline" id="Search" placeholder="Search">
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-success">Update</button>
                         <button type="button" class="btn btn-danger">Delete</button>
@@ -96,8 +100,8 @@
             <hr>
             <section class="col-12">
 
-                <table class="table ">
-                    <thead>
+                <table class="table table-striped bg-white">
+                    <thead class="bg-secondary">
                     <tr>
                         <th scope="col">#ID</th>
                         <th scope="col">Name</th>
@@ -153,8 +157,12 @@
                         <input type="text" class="form-control w-75" id="itemUnitPrice" placeholder="Enter Unit Price">
                     </div>
                 </aside>
-                <aside class="col-12 row justify-content-end">
-                    <div class="col-6">
+                <aside class="col-12 row justify-content-center">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-warning text-white fw-bold">Search</button>
+                        <input type="text" class="form-control w-50 d-inline" id="SearchItem" placeholder="Search ITem">
+                    </div>
+                    <div class="col-4">
                         <button type="button" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-success">Update</button>
                         <button type="button" class="btn btn-danger">Delete</button>
@@ -163,10 +171,10 @@
 
             </section>
             <hr>
-            <section class="col-12">
+            <section class="col-12 ">
 
-                <table class="table ">
-                    <thead>
+                <table class="table table-striped bg-white">
+                    <thead class="bg-secondary">
                     <tr>
                         <th scope="col">#Item Code</th>
                         <th scope="col">Description</th>
@@ -191,7 +199,7 @@
                         <th scope="row">3</th>
                         <td>Larry the Bird</td>
                         <td>15</td>
-                        <td>80000.00</td>
+                        <td>85000.00</td>
                     </tr>
                     </tbody>
                 </table>
@@ -204,7 +212,7 @@
                 <section class="col-5 container">
                     <section class="row bg-white gx-1 fs-5">
 
-                        <table class="table ">
+                        <table class="table">
                             <thead class="text-center ">
                             <tr class="bg-success">
                                 <th>Customer</th>
@@ -217,10 +225,10 @@
                                         <button class="btn btn-secondary dropdown-toggle w-100 fs-6" type="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false">Select Customer
                                         </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">C001</a></li>
-                                            <li><a class="dropdown-item" href="#">C002</a></li>
-                                            <li><a class="dropdown-item" href="#">C003</a></li>
+                                        <ul class="dropdown-menu ">
+                                            <li><a class="dropdown-item fw-bold" href="#">C001</a></li>
+                                            <li><a class="dropdown-item fw-bold" href="#">C002</a></li>
+                                            <li><a class="dropdown-item fw-bold" href="#">C003</a></li>
                                         </ul>
                                     </div>
                                     <div class="d-lg-inline col-4">
@@ -228,7 +236,6 @@
                                         <span>Dilshan</span>
                                     </div>
                                 </td>
-
                             </tr>
                             <tr>
                                 <td class="row justify-content-evenly">
@@ -244,7 +251,7 @@
                             </tr>
                             <tr>
                                 <th>
-                                    <div class="p-3"></div>
+                                    <div></div>
                                 </th>
                             </tr>
 
@@ -255,7 +262,7 @@
                 <section class="col-5 container">
                     <section class="row bg-white gx-1 fs-5">
                         <table class="table">
-                            <thead class="text-center ">
+                            <thead class="text-center">
                             <tr class="bg-warning">
                                 <th>Items</th>
                             </tr>
@@ -268,9 +275,9 @@
                                                 data-bs-toggle="dropdown" aria-expanded="false">Select Items
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">D001</a></li>
-                                            <li><a class="dropdown-item" href="#">D002</a></li>
-                                            <li><a class="dropdown-item" href="#">D003</a></li>
+                                            <li><a class="dropdown-item fw-bold" href="#">D001</a></li>
+                                            <li><a class="dropdown-item fw-bold" href="#">D002</a></li>
+                                            <li><a class="dropdown-item fw-bold" href="#">D003</a></li>
                                         </ul>
                                     </div>
                                     <div class="d-lg-inline col-4 w-50">
@@ -283,8 +290,11 @@
                             <tr>
                                 <td class="row justify-content-evenly">
                                     <div class="d-lg-inline col-4">
-                                        <span>Qty :</span>
-                                        <span>10</span>
+                                        <div class="input-group input-group-sm mb-3">
+                                            <span class="input-group-text fw-bold" id="orderQty">Qty</span>
+                                            <input type="number" class="form-control" aria-label="Sizing example input"
+                                                   aria-describedby="orderQty">
+                                        </div>
                                     </div>
                                     <div class="d-lg-inline  col-4 w-50">
                                         <span>Unit PRice :</span>
@@ -314,28 +324,28 @@
                         </div>
                         <div class="col-12 pt-2">
                             <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="orderCash">cash</span>
+                                <span class="input-group-text fw-bold" id="orderCash">cash</span>
                                 <input type="number" class="form-control" aria-label="Sizing example input"
                                        aria-describedby="orderCash">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text" id="orderDiscount">Disc</span>
+                                <span class="input-group-text fw-bold" id="orderDiscount">Disc</span>
                                 <input type="number" class="form-control" aria-label="Sizing example input"
                                        aria-describedby="orderDiscount">
                             </div>
                         </div>
                         <div class="col-12 pb-2">
-                            <button class="btn btn-primary btn-sm">Purchase</button>
+                            <button class="btn btn-primary btn-sm fw-bold">Purchase</button>
                         </div>
                     </section>
                 </section>
             </section>
 
             <section class="col-12  container-xxl">
-                <table class="table table-light table-striped">
-                    <thead>
+                <table class="table table-striped bg-white" id="orderTable">
+                    <thead class="bg-secondary">
                     <tr>
                         <th scope="col">#Item Code</th>
                         <th scope="col">Description</th>
@@ -343,7 +353,7 @@
                         <th scope="col">Unit Price</th>
                     </tr>
                     </thead>
-                    <tbody class="table-group-divider ">
+                    <tbody class="table-group-divider">
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
@@ -360,7 +370,7 @@
                         <th scope="row">3</th>
                         <td>Larry the Bird</td>
                         <td>15</td>
-                        <td>80000.00</td>
+                        <td>85000.00</td>
                     </tr>
 
                     </tbody>

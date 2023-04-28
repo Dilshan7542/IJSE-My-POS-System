@@ -17,7 +17,7 @@ header>nav::after{
 body>main{
     margin: 0;
     padding: 0;
-    background-color: rgba(115, 112, 112, 0.18);
+    background-color: rgba(100, 103, 107, 0.35);
 }
 main>main{
     box-sizing: border-box;
@@ -52,4 +52,27 @@ tbody>tr:hover{
 }
 #orderPaymentContainer{
     border-radius: 12px;
+}
+#orderTable tbody>tr:hover{
+    background-color: rgba(19, 78, 229, 0.51);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #130808;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ee0505;
 }
