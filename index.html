@@ -63,25 +63,29 @@
 <main class="container-fluid">
     <main id="customer-page" class="container-xxl" style="display: none;">
         <section class="row">
-            <section class="col col-xxl-12 row mt-5 justify-content-center">
+            <section class="col col-xxl-12 row justify-content-center mt-2">
+                <aside class="col-12 row justify-content-center">
+                   <h4 class="col-3">Manage Customer</h4>
+                </aside>
                 <aside class="col-4">
                     <div class="mb-3">
                         <label for="customerID" class="form-label fw-bold">ID</label>
                         <input type="text" class="form-control w-75" id="customerID" placeholder="ID" disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="customerName" class="form-label fw-bold">Name</label>
-                        <input type="text" class="form-control w-75" id="customerName" placeholder="Name">
+                        <label for="customerAddress" class="form-label fw-bold">Address</label>
+                        <input type="text" class="form-control w-75" id="customerAddress" placeholder="Address">
+
                     </div>
                 </aside>
                 <aside class="col-4">
                     <div class="mb-3">
-                        <label for="customerAddress" class="form-label fw-bold">Address</label>
-                        <input type="text" class="form-control w-75" id="customerAddress" placeholder="Address">
+                        <label for="customerName" class="form-label fw-bold">Name</label>
+                        <input type="text" class="form-control w-75" id="customerName" placeholder="Name">
                     </div>
                     <div class="mb-3">
                         <label for="customerSalary" class="form-label fw-bold">Salary</label>
-                        <input type="text" class="form-control w-75" id="customerSalary" placeholder="Salary">
+                        <input type="number" class="form-control w-75" id="customerSalary" placeholder="Salary">
                     </div>
                 </aside>
                 <aside class="col-12 row justify-content-center">
@@ -95,11 +99,9 @@
                         <button type="button" class="btn btn-danger">Delete</button>
                     </div>
                 </aside>
-
             </section>
             <hr>
             <section class="col-12">
-
                 <table class="table table-striped bg-white">
                     <thead class="bg-secondary">
                     <tr>
@@ -135,7 +137,10 @@
     </main>
     <main id="item-page" class="container-xxl" style="display:none;">
         <section class="row">
-            <section class="col col-xxl-12 row mt-5 justify-content-center">
+            <section class="col col-xxl-12 row mt-2 justify-content-center">
+                <aside class="col-12 row justify-content-center">
+                    <h4 class="col-3">Manage Item</h4>
+                </aside>
                 <aside class="col-4">
                     <div class="mb-3">
                         <label for="ItemCode" class="form-label fw-bold">Item Code</label>
@@ -143,18 +148,19 @@
                                disabled>
                     </div>
                     <div class="mb-3">
-                        <label for="itemDesc" class="form-label fw-bold">Description</label>
-                        <input type="text" class="form-control w-75" id="itemDesc" placeholder="Enter Description">
+                        <label for="itemQty" class="form-label fw-bold">Qty</label>
+                        <input type="number" class="form-control w-75" id="itemQty" placeholder="Enter Qty">
                     </div>
                 </aside>
                 <aside class="col-4">
                     <div class="mb-3">
-                        <label for="itemQty" class="form-label fw-bold">Address</label>
-                        <input type="text" class="form-control w-75" id="itemQty" placeholder="Enter Qty">
+                        <label for="itemDesc" class="form-label fw-bold">Description</label>
+                        <input type="text" class="form-control w-75" id="itemDesc" placeholder="Enter Description">
+
                     </div>
                     <div class="mb-3">
                         <label for="itemUnitPrice" class="form-label fw-bold">Unit Price</label>
-                        <input type="text" class="form-control w-75" id="itemUnitPrice" placeholder="Enter Unit Price">
+                        <input type="number" class="form-control w-75" id="itemUnitPrice" placeholder="Enter Unit Price">
                     </div>
                 </aside>
                 <aside class="col-12 row justify-content-center">
@@ -168,11 +174,9 @@
                         <button type="button" class="btn btn-danger">Delete</button>
                     </div>
                 </aside>
-
             </section>
             <hr>
-            <section class="col-12 ">
-
+            <section class="col-12">
                 <table class="table table-striped bg-white">
                     <thead class="bg-secondary">
                     <tr>
@@ -206,9 +210,12 @@
             </section>
         </section>
     </main>
-    <main id="order-page" class="container-xxl mt-5" style="display:none;">
+    <main id="order-page" class="container-xxl " style="display:none;">
         <section class="row">
-            <section class="col-12 row mt-2">
+        <aside class="col-12 row justify-content-center mt-2">
+            <h4 class="col-3">Manage Order</h4>
+        </aside>
+            <section class="col-12 row mt-2" id="orderMainSectionTables">
                 <section class="col-5 container">
                     <section class="row bg-white gx-1 fs-5">
 
@@ -220,9 +227,9 @@
                             </thead>
                             <tbody class="fs-6 table-group-divider">
                             <tr>
-                                <td class="row justify-content-lg-evenly">
+                                <td class="row justify-content-evenly">
                                     <div class="dropdown col-4">
-                                        <button class="btn btn-secondary dropdown-toggle w-100 fs-6" type="button"
+                                        <button class="btn btn-secondary dropdown-toggle fs-6" type="button"
                                                 data-bs-toggle="dropdown" aria-expanded="false">Select Customer
                                         </button>
                                         <ul class="dropdown-menu ">
@@ -311,7 +318,6 @@
                         </table>
                     </section>
                 </section>
-
                 <section class="col-2 bg-white container-xxl mt-2" id="orderPaymentContainer" style="height: 85%">
                     <section class="row h-100 pt-3 fw-bold">
                         <div class="col-12 text-danger">

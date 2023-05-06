@@ -40,13 +40,10 @@ tbody>tr:nth-child(even){
 tbody>tr:hover{
     background-color: rgba(19, 78, 229, 0.51);
 }
-
 #order-page thead{
     font-size: 1em;
 }
-#order-page tbody{
-    height:25vh;
-}
+
 #order-page tbody>tr:hover{
     background-color: white;
 }
@@ -55,6 +52,19 @@ tbody>tr:hover{
 }
 #orderTable tbody>tr:hover{
     background-color: rgba(19, 78, 229, 0.51);
+}
+#orderMainSectionTables tbody{
+    height:30vh;
+}
+#orderMainSectionTables tbody >tr:nth-child(1) td{
+   padding:2%;
+
+}
+#orderMainSectionTables tbody td{
+box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
 }
 
 /* width */
