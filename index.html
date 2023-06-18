@@ -15,7 +15,8 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-secondary-subtle">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold fs-4" href="#"><img src="./assets/img/icons8-spring-boot-48.png" alt="" width="15%">My POS System</a>
+            <a class="navbar-brand fw-bold fs-4" href="#"><img src="./assets/img/icons8-spring-boot-48.png" alt=""
+                                                               width="15%">My POS System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +25,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold ps-5 justify-content-end w-50">
                     <li class="nav-item">
-                        <a class="nav-link active navSelect" aria-current="page" href="#" onclick="navigation('',this)" style="color: blue">Home</a>
+                        <a class="nav-link active navSelect" aria-current="page" href="#" onclick="navigation('',this)"
+                           style="color: blue">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link navSelect" href="#" onclick="navigation('CUSTOMER',this)">Customer</a>
@@ -35,18 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link navSelect" href="#" onclick="navigation('ORDER',this)">Order</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">Other</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Add2</a></li>
-                        </ul>
-                    </li>
+
                 </ul>
                 <ul class="nav justify-content-end  fw-bold">
                     <li class="nav-item">
@@ -63,19 +54,18 @@
 <main class="container-fluid">
     <main id="customer-page" class="container-xxl" style="display: none;">
         <section class="row">
-            <section class="col col-xxl-12 row justify-content-center mt-2">
+            <section class="col col-xxl-12 row justify-content-center mt-2" id="manageCustomer">
                 <aside class="col-12 row justify-content-center">
-                   <h4 class="col-3">Manage Customer</h4>
+                    <h4 class="col-3">Manage Customer</h4>
                 </aside>
                 <aside class="col-4">
                     <div class="mb-3">
                         <label for="customerID" class="form-label fw-bold">ID</label>
-                        <input type="text" class="form-control w-75" id="customerID" placeholder="ID" disabled>
+                        <input type="text" class="form-control w-75" id="customerID" placeholder="ID">
                     </div>
                     <div class="mb-3">
                         <label for="customerAddress" class="form-label fw-bold">Address</label>
                         <input type="text" class="form-control w-75" id="customerAddress" placeholder="Address">
-
                     </div>
                 </aside>
                 <aside class="col-4">
@@ -91,12 +81,13 @@
                 <aside class="col-12 row justify-content-center">
                     <div class="col-4">
                         <button type="button" class="btn btn-warning text-white fw-bold">Search</button>
-                        <input type="text" class="form-control w-50 d-inline" id="Search" placeholder="Search">
+                        <input type="text" class="form-control w-50 d-inline" id="searchCustomer" placeholder="Search">
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" id="customerBtnSection">
                         <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-success opacity-25" disabled>Update</button>
+                        <button type="button" class="btn btn-danger opacity-25" disabled>Delete</button>
+                        <button type="button" class="btn btn-success btn-sm" >new</button>
                     </div>
                 </aside>
             </section>
@@ -111,25 +102,9 @@
                         <th scope="col">Salary</th>
                     </tr>
                     </thead>
-                    <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>100000.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>75000.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>Gampaha</td>
-                        <td>80000.00</td>
-                    </tr>
+
+                    <tbody class="table-group-divider" id="tblCustomerBody">
+
                     </tbody>
                 </table>
             </section>
@@ -144,8 +119,7 @@
                 <aside class="col-4">
                     <div class="mb-3">
                         <label for="ItemCode" class="form-label fw-bold">Item Code</label>
-                        <input type="text" class="form-control w-75" id="ItemCode" placeholder="Enter Item Code"
-                               disabled>
+                        <input type="text" class="form-control w-75" id="itemCode" placeholder="Enter Item Code">
                     </div>
                     <div class="mb-3">
                         <label for="itemQty" class="form-label fw-bold">Qty</label>
@@ -155,23 +129,25 @@
                 <aside class="col-4">
                     <div class="mb-3">
                         <label for="itemDesc" class="form-label fw-bold">Description</label>
-                        <input type="text" class="form-control w-75" id="itemDesc" placeholder="Enter Description">
+                        <input type="text" class="form-control w-75 " id="itemDesc" placeholder="Enter Description">
 
                     </div>
                     <div class="mb-3">
                         <label for="itemUnitPrice" class="form-label fw-bold">Unit Price</label>
-                        <input type="number" class="form-control w-75" id="itemUnitPrice" placeholder="Enter Unit Price">
+                        <input type="number" class="form-control w-75" id="itemUnitPrice"
+                               placeholder="Enter Unit Price">
                     </div>
                 </aside>
                 <aside class="col-12 row justify-content-center">
                     <div class="col-4">
-                        <button type="button" class="btn btn-warning text-white fw-bold">Search</button>
-                        <input type="text" class="form-control w-50 d-inline" id="SearchItem" placeholder="Search ITem">
+                        <button type="button" class="btn btn-warning text-white fw-bold" id="btnItemSearch">Search</button>
+                        <input type="text" class="form-control w-50 d-inline" id="SearchItem" placeholder="Search Item">
                     </div>
-                    <div class="col-4">
+                    <div class="col-4" id="itemBtnSection">
                         <button type="button" class="btn btn-primary">Save</button>
-                        <button type="button" class="btn btn-success">Update</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-success opacity-25" disabled>Update</button>
+                        <button type="button" class="btn btn-danger opacity-25" disabled>Delete</button>
+                        <button type="button" class="btn btn-success btn-sm " >new</button>
                     </div>
                 </aside>
             </section>
@@ -187,24 +163,6 @@
                     </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>5</td>
-                        <td>100000.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>10</td>
-                        <td>75000.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>15</td>
-                        <td>85000.00</td>
-                    </tr>
                     </tbody>
                 </table>
             </section>
@@ -212,9 +170,9 @@
     </main>
     <main id="order-page" class="container-xxl " style="display:none;">
         <section class="row">
-        <aside class="col-12 row justify-content-center mt-2">
-            <h4 class="col-3">Manage Order</h4>
-        </aside>
+            <aside class="col-12 row justify-content-center mt-2">
+                <h4 class="col-3">Manage Order</h4>
+            </aside>
             <section class="col-12 row mt-2" id="orderMainSectionTables">
                 <section class="col-5 container">
                     <section class="row bg-white gx-1 fs-5">
@@ -388,11 +346,12 @@
 </main>
 <footer></footer>
 <script src="assets/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.3.min.js"></script>
 <script>
-
-    function navigation(type,obj) {
+var test=null;
+    function navigation(type, obj) {
         clearFields();
-        obj.style.color="blue";
+        obj.style.color = "blue";
         switch (type) {
             case "CUSTOMER":
                 document.getElementById("customer-page").style.display = "block";
@@ -411,13 +370,21 @@
     }
 
     function clearFields() {
-            for (let i = 0; i <= 3; i++) {
-           document.getElementsByClassName('navSelect').item(i).style.color="black";
-            }
+        for (let i = 0; i <= 3; i++) {
+            document.getElementsByClassName('navSelect').item(i).style.color = "black";
+        }
         document.getElementById("customer-page").style.display = "none";
         document.getElementById("item-page").style.display = "none";
         document.getElementById("order-page").style.display = "none";
+
     }
+
 </script>
+<script type="module" src="db/db.js"></script>
+
+<script type="module" src="controller/CustomerController.js"></script>
+
+
+
 </body>
 </html>
