@@ -83,7 +83,6 @@ export class CustomerController {
 
     handelDeleteCustomer() {
         this.customerList2= this.customerList2.filter(function (e){ return e._id !== $("#customerID").val()});
-      test=this.customerList2;
       this.loadAllCustomer();
     }
 
@@ -132,7 +131,7 @@ export class CustomerController {
     loadAllCustomer(e) {
         $("#tblCustomerBody").html("");
         for (let customer of this.customerList2) {
-            $("#tblCustomerBody").append(`<tr> <td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td></tr>`);
+            $("#tblCustomerBody").append(`<tr> <td>${customer._id}</td><td>${customer._name}</td><td>${customer._address}</td><td>${customer.salary}</td></tr>`);
 
             document.querySelector("#tblCustomerBody>:last-child").addEventListener("click", (evt)=>{
                 this.manageControlBtn(evt);
@@ -143,6 +142,7 @@ export class CustomerController {
     }
 
     btnNewCustomer() {
+
         $("#customerBtnSection>:nth-child(1)").prop("disabled", false);
         $("#customerBtnSection>:nth-child(2)").prop("disabled", true);
         $("#customerBtnSection>:nth-child(3)").prop("disabled", true);

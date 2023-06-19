@@ -87,13 +87,13 @@
                         <button type="button" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-success opacity-25" disabled>Update</button>
                         <button type="button" class="btn btn-danger opacity-25" disabled>Delete</button>
-                        <button type="button" class="btn btn-success btn-sm" >new</button>
+                        <button type="button" class="btn btn-success btn-sm">new</button>
                     </div>
                 </aside>
             </section>
             <hr>
             <section class="col-12">
-                <table class="table table-striped bg-white">
+                <table class="table bg-white">
                     <thead class="bg-secondary">
                     <tr>
                         <th scope="col">#ID</th>
@@ -112,7 +112,7 @@
     </main>
     <main id="item-page" class="container-xxl" style="display:none;">
         <section class="row">
-            <section class="col col-xxl-12 row mt-2 justify-content-center">
+            <section class="col col-xxl-12 row mt-2 justify-content-center" id="manageItemSection">
                 <aside class="col-12 row justify-content-center">
                     <h4 class="col-3">Manage Item</h4>
                 </aside>
@@ -140,20 +140,21 @@
                 </aside>
                 <aside class="col-12 row justify-content-center">
                     <div class="col-4">
-                        <button type="button" class="btn btn-warning text-white fw-bold" id="btnItemSearch">Search</button>
-                        <input type="text" class="form-control w-50 d-inline" id="SearchItem" placeholder="Search Item">
+                        <button type="button" class="btn btn-warning text-white fw-bold" id="btnItemSearch">Search
+                        </button>
+                        <input type="text" class="form-control w-50 d-inline" id="searchItem" placeholder="Search Item">
                     </div>
                     <div class="col-4" id="itemBtnSection">
                         <button type="button" class="btn btn-primary">Save</button>
                         <button type="button" class="btn btn-success opacity-25" disabled>Update</button>
                         <button type="button" class="btn btn-danger opacity-25" disabled>Delete</button>
-                        <button type="button" class="btn btn-success btn-sm " >new</button>
+                        <button type="button" class="btn btn-success btn-sm ">new</button>
                     </div>
                 </aside>
             </section>
             <hr>
             <section class="col-12">
-                <table class="table table-striped bg-white">
+                <table class="table  bg-white">
                     <thead class="bg-secondary">
                     <tr>
                         <th scope="col">#Item Code</th>
@@ -162,7 +163,7 @@
                         <th scope="col">Unit Price</th>
                     </tr>
                     </thead>
-                    <tbody class="table-group-divider">
+                    <tbody class="table-group-divider" id="tblItemBody">
                     </tbody>
                 </table>
             </section>
@@ -318,25 +319,6 @@
                     </tr>
                     </thead>
                     <tbody class="table-group-divider">
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>5</td>
-                        <td>100000.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>10</td>
-                        <td>75000.00</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>15</td>
-                        <td>85000.00</td>
-                    </tr>
-
                     </tbody>
                 </table>
             </section>
@@ -348,7 +330,8 @@
 <script src="assets/bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/jQuery/jquery-3.6.3.min.js"></script>
 <script>
-var test=null;
+    var test = null;
+
     function navigation(type, obj) {
         clearFields();
         obj.style.color = "blue";
@@ -383,7 +366,7 @@ var test=null;
 <script type="module" src="db/db.js"></script>
 
 <script type="module" src="controller/CustomerController.js"></script>
-
+<script type="module" src="controller/ItemController.js"></script>
 
 
 </body>
