@@ -12,12 +12,15 @@ export class CustomerController {
         $("#searchCustomer").on("keyup", this.searchCustomer.bind(this));
         this.customerList2 = customerList;
         this.loadAllCustomer();
-
+        this.initialize();
     }
-
+     initialize() {
+           let id= this.customerList2.length+1+"";
+            $("#customerID").val("C"+id.padStart(3,"0"));
+      }
     handleSaveCustomer(e) {
         for (let customer of this.customerList2) {
-            if (customer._id === $("#customerID").val()) {
+            if (customer.id === $("#customerID").val()) {
                 alert("Customer Exist...!");
                 this.clearTextField();
                 return;
@@ -71,10 +74,10 @@ export class CustomerController {
             let address = $("#customerAddress").val();
             let salary = $("#customerSalary").val();
             this.customerList2.forEach((e) => {
-                if (e._id === id) {
-                    e._name = name;
-                    e._address = address;
-                    e._salary = salary;
+                if (e.id === id) {
+                    e.name = name;
+                    e.address = address;
+                    e.salary = salary;
                 }
             });
             this.loadAllCustomer();
@@ -131,9 +134,9 @@ export class CustomerController {
     loadAllCustomer(e) {
         $("#tblCustomerBody").html("");
         for (let customer of this.customerList2) {
-            $("#tblCustomerBody").append(`<tr> <td>${customer._id}</td><td>${customer._name}</td><td>${customer._address}</td><td>${customer.salary}</td></tr>`);
+            $("#tblCustomerBody").append(`<tr> <td>${customer.id}</td><td>${customer.name}</td><td>${customer.address}</td><td>${customer.salary}</td></tr>`);
 
-            document.querySelector("#tblCustomerBody>:last-child").addEventListener("click", (evt47)=>{
+            document.querySelector("#tblCustomerBody>:last-child").addEventListener("click", (evt)=>{
                 this.manageControlBtn(evt);
             });
 
@@ -164,6 +167,7 @@ export class CustomerController {
         $("#customerSalary").val("");
         $("#manageCustomer input").css("border-color","gray");
     }
+
 
 
 }
