@@ -133,7 +133,7 @@ export class CustomerController {
         for (let customer of this.customerList2) {
             $("#tblCustomerBody").append(`<tr> <td>${customer._id}</td><td>${customer._name}</td><td>${customer._address}</td><td>${customer.salary}</td></tr>`);
 
-            document.querySelector("#tblCustomerBody>:last-child").addEventListener("click", (evt)=>{
+            document.querySelector("#tblCustomerBody>:last-child").addEventListener("click", (evt47)=>{
                 this.manageControlBtn(evt);
             });
 

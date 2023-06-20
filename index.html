@@ -38,6 +38,7 @@
                         <a class="nav-link navSelect" href="#" onclick="navigation('ORDER',this)">Order</a>
                     </li>
 
+
                 </ul>
                 <ul class="nav justify-content-end  fw-bold">
                     <li class="nav-item">
@@ -164,165 +165,132 @@
                     </tr>
                     </thead>
                     <tbody class="table-group-divider" id="tblItemBody">
+
                     </tbody>
                 </table>
             </section>
         </section>
     </main>
-    <main id="order-page" class="container-xxl " style="display:none;">
-        <section class="row">
-            <aside class="col-12 row justify-content-center mt-2">
-                <h4 class="col-3">Manage Order</h4>
-            </aside>
-            <section class="col-12 row mt-2" id="orderMainSectionTables">
-                <section class="col-5 container">
-                    <section class="row bg-white gx-1 fs-5">
+    <main id="order-page" class="container-xxl " style="display:none;height: 90vh">
+        <section class="row me-0 ms-0 h-100">
+            <section class="col-12" style="height: 1%">
+                <h4 class="text-center w-100 m-0 " >Manage Order</h4>
+                <span class="fw-bold">Order ID :</span><span id="lblOrderID"></span>
+            </section>
+        <!--Up Section-->
+            <section class="col-lg-12 row h-25" id="orderUpSection">
+                <!--Customer Section-->
+                <section class="col-lg-12 row h-50">
+                    <aside class="row  h-100">
 
-                        <table class="table">
-                            <thead class="text-center ">
-                            <tr class="bg-success">
-                                <th>Customer</th>
-                            </tr>
-                            </thead>
-                            <tbody class="fs-6 table-group-divider">
-                            <tr>
-                                <td class="row justify-content-evenly">
-                                    <div class="dropdown col-4">
-                                        <button class="btn btn-secondary dropdown-toggle fs-6" type="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">Select Customer
-                                        </button>
-                                        <ul class="dropdown-menu ">
-                                            <li><a class="dropdown-item fw-bold" href="#">C001</a></li>
-                                            <li><a class="dropdown-item fw-bold" href="#">C002</a></li>
-                                            <li><a class="dropdown-item fw-bold" href="#">C003</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="d-lg-inline col-4">
-                                        <span>Name :</span>
-                                        <span>Dilshan</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="row justify-content-evenly">
-                                    <div class="d-lg-inline col-4">
-                                        <span>Address :</span>
-                                        <span>Gampaha</span>
-                                    </div>
-                                    <div class="d-lg-inline  col-4">
-                                        <span>Salary :</span>
-                                        <span>85000.00</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <div></div>
-                                </th>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </section>
+                        <div class="dropdown  col-2  row align-items-end mb-1 me-3">
+                            <button class="btn btn-secondary  dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btnDropDownCustomer">Customer ID</button>
+                            <ul class="dropdown-menu" id="dropCustomer">
+                                <li><a class="dropdown-item" href="#">C001</a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-1 col-2  h-100 row align-items-end me-3">
+                            <label  class="form-label fw-bold">Name</label>
+                            <input type="text" class="form-control "  disabled placeholder="Name" id="orderCustomerName">
+                        </div>
+                        <div class="mt-1 col-2  h-100 row align-items-end me-3">
+                            <label  class="form-label fw-bold">Address</label>
+                            <input type="text" class="form-control"  disabled placeholder="Address" id="orderCustomerAddress">
+                        </div>
+                        <div class="mt-1 col-2 h-100 row align-items-end">
+                            <label  class="form-label fw-bold">Salary</label>
+                            <input type="text" class="form-control"  disabled placeholder="Salary" id="orderCustomerSalary">
+                        </div>
+                    </aside>
                 </section>
-                <section class="col-5 container">
-                    <section class="row bg-white gx-1 fs-5">
-                        <table class="table">
-                            <thead class="text-center">
-                            <tr class="bg-warning">
-                                <th>Items</th>
-                            </tr>
-                            </thead>
-                            <tbody class="fs-6 table-group-divider">
-                            <tr>
-                                <td class="row justify-content-lg-evenly">
-                                    <div class="dropdown col-4">
-                                        <button class="btn btn-secondary dropdown-toggle w-100 fs-6" type="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">Select Items
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item fw-bold" href="#">D001</a></li>
-                                            <li><a class="dropdown-item fw-bold" href="#">D002</a></li>
-                                            <li><a class="dropdown-item fw-bold" href="#">D003</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="d-lg-inline col-4 w-50">
-                                        <span>Description :</span>
-                                        <span>Kiri Samba 1KG</span>
-                                    </div>
-                                </td>
+                <!--Item Section-->
 
-                            </tr>
-                            <tr>
-                                <td class="row justify-content-evenly">
-                                    <div class="d-lg-inline col-4">
-                                        <div class="input-group input-group-sm mb-3">
-                                            <span class="input-group-text fw-bold" id="orderQty">Qty</span>
-                                            <input type="number" class="form-control" aria-label="Sizing example input"
-                                                   aria-describedby="orderQty">
-                                        </div>
-                                    </div>
-                                    <div class="d-lg-inline  col-4 w-50">
-                                        <span>Unit PRice :</span>
-                                        <span>1000.00</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="row justify-content-end pe-5">
-                                    <button class="btn bg-success col-2 btn-sm text-white fw-bold">Add</button>
-                                </th>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                </section>
-                <section class="col-2 bg-white container-xxl mt-2" id="orderPaymentContainer" style="height: 85%">
-                    <section class="row h-100 pt-3 fw-bold">
-                        <div class="col-12 text-danger">
-                            <span class="">Total :</span>
-                            <span>1000.00</span>
+                <section class="col-lg-12 h-50 mt-2">
+                    <hr>
+                    <aside class="row  h-100" id="orderItemSection">
+                        <div class="dropdown h-100 col-2  row align-items-end mb-1 me-3">
+                            <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btnDropDownItem">Item Code</button>
+                            <ul class="dropdown-menu" id="dropItemCode">
+                                <li><a class="dropdown-item" href="#">C001</a></li>
+                            </ul>
                         </div>
-                        <div class="col-12 text-primary">
-                            <span class="">Sub Total :</span>
-                            <span>1050.00</span>
+
+                        <div class="mt-1 col-2  h-100 row align-items-end me-3">
+                            <label  class="form-label fw-bold">Description</label>
+                            <input type="text" class="form-control"  disabled placeholder="Description" id="orderItemDesc">
                         </div>
-                        <div class="col-12 pt-2">
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text fw-bold" id="orderCash">cash</span>
-                                <input type="number" class="form-control" aria-label="Sizing example input"
-                                       aria-describedby="orderCash">
-                            </div>
+                        <div class="mt-1 col-2 h-100 row align-items-end me-3">
+                            <label  class="form-label fw-bold">Unit Price</label>
+                            <input type="text" class="form-control"  disabled placeholder="UnitPrice" id="orderItemUnitPrice">
                         </div>
-                        <div class="col-12">
-                            <div class="input-group input-group-sm mb-3">
-                                <span class="input-group-text fw-bold" id="orderDiscount">Disc</span>
-                                <input type="number" class="form-control" aria-label="Sizing example input"
-                                       aria-describedby="orderDiscount">
-                            </div>
+                        <div class="mt-1 col-1 h-100 row align-items-end me-3">
+                            <label  class="form-label fw-bold">Qty</label>
+                            <input type="number" class="form-control"   placeholder="Qty" id="orderItemQty" value="1">
                         </div>
-                        <div class="col-12 pb-2">
-                            <button class="btn btn-primary btn-sm fw-bold">Purchase</button>
+                        <div class="mt-1 col-1 row align-items-end w-25">
+                          <button class="btn btn-success btn-sm w-25"  id="btnOrderAdd">Add</button>
                         </div>
-                    </section>
+
+                    </aside>
                 </section>
             </section>
+            <!--Down Section-->
+            <section class="col-lg-12 row h-50 mt-1 ">
+                <!--Table Section-->
+                <section class="col-8 h-100 mw-100 overflow-y-scroll">
+                <hr>
+                    <table class="table  bg-white ">
+                        <thead class="bg-secondary">
+                        <tr>
+                            <th scope="col">#Item Code</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody class="table-group-divider" id="tblOrderDetailBody">
+                        </tbody>
+                    </table>
+                </section>
+              <!--  Purchase Order Section-->
+                <section class="col-4 row align-items-end">
 
-            <section class="col-12  container-xxl">
-                <table class="table table-striped bg-white" id="orderTable">
-                    <thead class="bg-secondary">
-                    <tr>
-                        <th scope="col">#Item Code</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Qty</th>
-                        <th scope="col">Unit Price</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-group-divider">
-                    </tbody>
-                </table>
+                    <section class="col-lg-12 col-sm-12 bg-white container-xxl mt-2 h-75" id="orderPaymentContainer" >
+                        <section class="row  pt-3 fw-bold">
+                            <div class="col-12 text-danger">
+                                <span class="">Total :</span>
+                                <span id="orderTotal">00.00</span>
+                            </div>
+
+                            <div class="col-12 pt-2">
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text fw-bold" id="orderDiscount">Disc</span>
+                                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="orderDiscount" placeholder="0" id="txtDiscount">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text fw-bold" id="orderCash">cash</span>
+                                    <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="orderCash" placeholder="0.00" id="txtCash">
+                                </div>
+                            </div>
+                            <div class="col-12 text-primary">
+                                <span class="">Sub Total :</span>
+                                <span id="orderSubTotal">00.00</span>
+                            </div>
+                            <div class="col-12 pb-2 mt-2">
+                                <button class="btn btn-warning btn-sm fw-bold" id="btnPurchaseOrder">Purchase</button>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+
+
+
+
+                </section>
             </section>
-
         </section>
     </main>
 </main>
@@ -345,6 +313,9 @@
             case "ORDER":
                 document.getElementById("order-page").style.display = "block";
                 break;
+            case "ORDER2":
+                document.getElementById("order-page2").style.display = "block";
+                break;
             default:
                 clearFields();
                 break;
@@ -364,9 +335,9 @@
 
 </script>
 <script type="module" src="db/db.js"></script>
-
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
 
 
 </body>
