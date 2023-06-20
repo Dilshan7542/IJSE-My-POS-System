@@ -119,6 +119,8 @@ export class OrderController {
                 this.orderDetailList.push(e);
             });
             this.orderDetailListTM=[];
+        }else{
+            alert("please pay the cash!!!")
         }
 
     }

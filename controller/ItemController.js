@@ -11,8 +11,13 @@ export class ItemController {
         $("#searchItem").on("keyup", this.handelSearchItem.bind(this));
         this.itemList = itemList;
         this.loadItemTable();
+        this.initialize();
     }
+    initialize() {
+        let id = itemList.length+1+"";
+        $("#itemCode").val("P"+id.padStart(3,"0"));
 
+    }
     handelSaveItem() {
         for (let item of this.itemList) {
             if (item._code === $("#itemCode").val()) {
@@ -32,7 +37,7 @@ export class ItemController {
     }
 
     isValid() {
-        let code = /^D([0-9]){3,3}$/;
+        let code = /^P([0-9]){3,3}$/;
         let qty = /^(-)?([0-9]){1,5}$/;
         let unitPrice = /^\d+(\.\d)?\d*$/;
 
@@ -160,6 +165,8 @@ export class ItemController {
         $("#itemUnitPrice").val("");
         $("#manageItemSection input").css("border-color","darkgray");
     }
+
+
 }
 
 let itemController = new ItemController();
