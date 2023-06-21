@@ -141,6 +141,7 @@ export class CustomerController {
             });
 
         }
+        this.initialize();
         this.clearTextField();
     }
 
