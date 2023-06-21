@@ -129,8 +129,8 @@ export class ItemController {
                 this.manageRowEvent(evt);
             });
         });
-        this.initialize();
         this.clearTextField();
+        this.initialize();
     }
 
     manageRowEvent(event) {

@@ -141,8 +141,8 @@ export class CustomerController {
             });
 
         }
-        this.initialize();
         this.clearTextField();
+        this.initialize();
     }
 
     btnNewCustomer() {
